@@ -156,6 +156,10 @@ DLL_EXPORT v2_t dll_v2_scale(double s, v2_t v)
 	return v2_scale(s, v);
 }
 
+int  dll_dgesvd_driver(int m, int n, double *A, double *U, double *S, double *VT)
+{
+	return dgesvd_driver(m,n,A,U,S,VT);
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 DLL_EXPORT double dll_align_horn(int n, v3_t *right_pts, v3_t *left_pts, 

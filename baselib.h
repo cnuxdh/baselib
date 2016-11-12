@@ -85,6 +85,7 @@ DLL_EXPORT void dll_matrix_ident(int n, double *A);
 
 DLL_EXPORT v2_t dll_v2_scale(double s, v2_t v);
 
+DLL_EXPORT int  dll_dgesvd_driver(int m, int n, double *A, double *U, double *S, double *VT);
 
 ////////////////////////////////////////////////////////////////////////////////
 DLL_EXPORT double dll_align_horn(int n, v3_t *right_pts, v3_t *left_pts, 
