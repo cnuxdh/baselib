@@ -15,6 +15,19 @@
 
 
 
+//DLL_EXPORT v3_t dll_v3_new(double x, double y, double z); 
+
+DLL_EXPORT void dll_refine_fmatrix_nonlinear_matches(int num_pts, v3_t *r_pts, v3_t *l_pts, 
+	double *F0, double *Fout);
+
+DLL_EXPORT double dll_fmatrix_compute_residual(double *F, v3_t r, v3_t l);
+
+DLL_EXPORT int dll_estimate_fmatrix_ransac_matches(int num_pts, v3_t *a_pts, v3_t *b_pts, 
+	int num_trials, double threshold, 
+	double success_ratio, 
+	int essential, double *F);
+
+
 DLL_EXPORT int dll_compute_pose_ransac(int n, v2_t *r_pts, v2_t *l_pts, 
 	double *K1, double *K2, 
 	double ransac_threshold, int ransac_rounds, 

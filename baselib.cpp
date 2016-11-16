@@ -13,6 +13,31 @@
 #include "matrix/matrix.h"
 #include "horn.h"
 #include "homography.h"
+#include "fmatrix.h"
+
+
+
+
+DLL_EXPORT void dll_refine_fmatrix_nonlinear_matches(int num_pts, v3_t *r_pts, v3_t *l_pts, 
+	double *F0, double *Fout)
+{
+	refine_fmatrix_nonlinear_matches(num_pts, r_pts, l_pts, F0, Fout);
+}
+
+DLL_EXPORT double dll_fmatrix_compute_residual(double *F, v3_t r, v3_t l)
+{
+	return fmatrix_compute_residual(F, r, l);
+}
+
+DLL_EXPORT int dll_estimate_fmatrix_ransac_matches(int num_pts, v3_t *a_pts, v3_t *b_pts, 
+	int num_trials, double threshold, 
+	double success_ratio, 
+	int essential, double *F)
+{
+	return estimate_fmatrix_ransac_matches(num_pts, a_pts, b_pts, num_trials, 
+		threshold, success_ratio, essential, F);
+}
+
 
 
 int dll_compute_pose_ransac(int n, v2_t *r_pts, v2_t *l_pts, 
