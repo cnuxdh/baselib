@@ -223,7 +223,7 @@ DLL_EXPORT void dll_run_sfm(int num_pts, int num_cameras, int ncons,
 	double *Uout, double *Wout)
 {
 	run_sfm(num_pts, num_cameras, ncons, vmask, projections, est_focal_length,
-		undistort, const_focal_length, explicit_camera_centers, 
+		const_focal_length,  undistort, explicit_camera_centers, 
 		init_camera_params, init_pts, use_constraints, use_point_constraints, 
 		points_constraints, point_constraint_weight, fix_points, optimize_for_fisheye,
 		eps2, Vout, Sout, Uout,Wout);
