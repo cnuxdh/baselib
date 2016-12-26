@@ -38,8 +38,6 @@ DLL_EXPORT int dll_estimate_fmatrix_ransac_matches(int num_pts, v3_t *a_pts, v3_
 		threshold, success_ratio, essential, F);
 }
 
-
-
 int dll_compute_pose_ransac(int n, v2_t *r_pts, v2_t *l_pts, 
 	double *K1, double *K2, 
 	double ransac_threshold, int ransac_rounds, 
@@ -61,6 +59,14 @@ int dll_find_projection_3x4_ransac(int num_pts, v3_t *points, v2_t *projs,
 {
 	return find_projection_3x4_ransac(num_pts, points, projs, P, ransac_rounds, ransac_threshold);
 }
+
+//for panorama image
+int dll_find_projection_3x4_ransac_pano(int num_pts, v3_t *points, v3_t *projs, 
+	double *P, int ransac_rounds, double ransac_threshold)
+{
+	return find_projection_3x4_ransac_pano(num_pts, points, projs, P, ransac_rounds, ransac_threshold);
+}
+
 
 double dll_fmatrix_compute_residual_pano(double *F, v3_t l, v3_t r, double radius)
 {
@@ -252,4 +258,9 @@ v2_t dll_v2_new(double x, double y)
 v3_t dll_v3_new(double x, double y, double z)
 {
 	return v3_new(x,y,z);
+}
+
+double dll_cross_angle(v3_t p1, v3_t p2)
+{
+	return cross_angle(p1, p2);
 }

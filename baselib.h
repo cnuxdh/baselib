@@ -43,6 +43,10 @@ DLL_EXPORT int dll_find_projection_3x4_ransac(int num_pts, v3_t *points, v2_t *p
 	double *P, int ransac_rounds, double ransac_threshold);
 
 
+DLL_EXPORT int dll_find_projection_3x4_ransac_pano(int num_pts, v3_t *points, v3_t *projs, 
+	double *P, int ransac_rounds, double ransac_threshold);
+
+
 DLL_EXPORT double dll_fmatrix_compute_residual_pano(double *F, v3_t l, v3_t r, double radius);
 
 
@@ -144,6 +148,6 @@ DLL_EXPORT v2_t dll_v2_new(double x, double y);
 
 DLL_EXPORT v3_t dll_v3_new(double x, double y, double z);
 
-
+DLL_EXPORT double dll_cross_angle(v3_t p1, v3_t p2);
 
 #endif
